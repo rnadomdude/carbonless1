@@ -20,32 +20,6 @@
         android:layout_marginTop="@dimen/loginViewsMargin"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputName"
-        style="@style/parent"
-        android:layout_marginTop="@dimen/loginViewsMargin">
-
-        <EditText
-            android:id="@+id/editTextName"
-            style="@style/modifiedEditText"
-            android:hint="@string/login_name_hint"
-            android:inputType="textPersonName"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputMobile"
-        style="@style/parent"
-        android:layout_marginTop="@dimen/loginViewsMargin">
-
-        <EditText
-            android:id="@+id/editTextMobile"
-            style="@style/modifiedEditText"
-            android:hint="@string/login_mobile_number_hint"
-            android:inputType="phone"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputEmail"
         style="@style/parent"
         android:layout_marginTop="@dimen/loginViewsMargin">
@@ -81,11 +55,11 @@
     <TextView
         android:id="@+id/noacc"
         style="@style/parent"
-        android:textAlignment="textEnd"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:text="Have an account? Sign in"
         android:layout_marginTop="@dimen/loginViewsMargin"
-        android:gravity="end" />
+        android:gravity="end"
+        android:text="Have an account? Sign in"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
 </LinearLayout>
