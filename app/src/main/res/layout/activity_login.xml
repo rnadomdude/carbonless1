@@ -8,6 +8,104 @@
     android:background="@drawable/login_bk"
     android:focusableInTouchMode="true">
 
-    <include layout="@layout/layout_register"/>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/loginHeader"
+            android:text="Login"
+            android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputEmail"
+            style="@style/parent"
+            android:layout_marginTop="@dimen/loginViewsMargin">
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                style="@style/modifiedEditText"
+                android:hint="@string/login_email_hint"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputPassword"
+            style="@style/parent"
+            android:layout_marginTop="@dimen/loginViewsMargin">
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                style="@style/modifiedEditText"
+                android:hint="@string/login_password_hint"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/login_password_input"
+            android:layout_marginTop="5dp"
+            >
+
+            <com.rey.material.widget.CheckBox
+                android:id="@+id/remember_me_chkb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Material.Drawable.CheckBox"
+                android:text="Remember me"
+                android:textColor="@color/black"
+                app:cbd_strokeColor="@color/black"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:layout_marginLeft="2dp"
+                />
+
+            <TextView
+                android:id="@+id/forget_password_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forget Password?"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginLeft="70dp"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/cirLoginButton"
+            style="@style/loginButton"
+            android:text="Login"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/loginViewsMargin"/>
+
+        <TextView
+            android:id="@+id/makeacc"
+            style="@style/parent"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="@string/login_signup_hint"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:gravity="end" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

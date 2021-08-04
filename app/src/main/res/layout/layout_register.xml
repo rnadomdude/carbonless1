@@ -12,6 +12,8 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,6 +35,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputUsername"
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            style="@style/modifiedEditText"
+            android:hint="Username"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputPassword"
         style="@style/parent"
         android:layout_marginTop="@dimen/loginViewsMargin">
@@ -41,6 +56,19 @@
             android:id="@+id/editTextPassword"
             style="@style/modifiedEditText"
             android:hint="@string/login_password_hint"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputCfmPassword"
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+
+        <EditText
+            android:id="@+id/editTextCfmPassword"
+            style="@style/modifiedEditText"
+            android:hint="Confirm Password"
             android:inputType="textPassword"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>

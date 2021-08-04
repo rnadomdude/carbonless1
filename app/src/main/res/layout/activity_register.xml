@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context="com.sp.carbonless.RegisterActivity"
+    android:background="@drawable/login_bk"
+    android:focusableInTouchMode="true">
 
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="logout" />
+    <include layout="@layout/layout_register"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

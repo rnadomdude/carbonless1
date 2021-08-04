@@ -13,12 +13,6 @@
     app:layout_constraintTop_toTopOf="parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,6 +45,40 @@
             android:inputType="textPassword"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/login_password_input"
+        android:layout_marginTop="5dp"
+        >
+
+        <com.rey.material.widget.CheckBox
+            android:id="@+id/remember_me_chkb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Material.Drawable.CheckBox"
+            android:text="Remember me"
+            android:textColor="@color/black"
+            app:cbd_strokeColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:layout_marginLeft="2dp"
+            />
+
+        <TextView
+            android:id="@+id/forget_password_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forget Password?"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginLeft="70dp"
+            />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/cirLoginButton"

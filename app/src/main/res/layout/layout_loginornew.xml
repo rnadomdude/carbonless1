@@ -33,22 +33,6 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/loginViewsMargin"
-            android:background="@drawable/bt_red_small" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/loginViewsMargin"
-            android:background="@drawable/bt_blue_small" />
-
-        <Button
             android:id="@+id/SignUp"
             style="@style/loginButton"
             android:layout_gravity="center"
