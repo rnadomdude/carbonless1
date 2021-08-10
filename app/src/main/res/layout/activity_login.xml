@@ -35,10 +35,10 @@
             android:layout_marginTop="@dimen/loginViewsMargin">
 
             <EditText
-                android:id="@+id/editTextEmail"
+                android:id="@+id/editTextUsernameLogin"
                 style="@style/modifiedEditText"
-                android:hint="@string/login_email_hint"
-                android:inputType="textEmailAddress"
+                android:hint="Username"
+                android:inputType="text"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,7 +74,7 @@
                 app:cbd_strokeColor="@color/black"
                 android:gravity="center_vertical"
                 android:textSize="18sp"
-                android:layout_marginLeft="2dp"
+                android:layout_marginRight="7dp"
                 />
 
             <TextView
@@ -84,7 +84,7 @@
                 android:text="Forget Password?"
                 android:textColor="@color/black"
                 android:textSize="15sp"
-                android:layout_marginLeft="70dp"
+                android:layout_marginLeft="65dp"
                 />
 
         </LinearLayout>
@@ -101,7 +101,7 @@
             style="@style/parent"
             android:textAlignment="textEnd"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="@string/login_signup_hint"
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:gravity="end" />

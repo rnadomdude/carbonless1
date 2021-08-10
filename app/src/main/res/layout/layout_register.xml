@@ -27,11 +27,43 @@
         android:layout_marginTop="@dimen/loginViewsMargin">
 
         <EditText
-            android:id="@+id/editTextEmail"
+            android:id="@+id/editTextUsernameLogin"
             style="@style/modifiedEditText"
             android:hint="@string/login_email_hint"
             android:inputType="textEmailAddress"
             android:maxLines="1" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputFullname"
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+
+        <EditText
+            android:id="@+id/editTextFullNameLogin"
+            style="@style/modifiedEditText"
+            android:hint="Full Name"
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputAddress"
+        style="@style/parent"
+        android:layout_marginTop="@dimen/loginViewsMargin">
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            style="@style/modifiedEditText"
+            android:hint="Address"
+            android:inputType="textEmailAddress"
+            android:maxLines="2" />
+
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout

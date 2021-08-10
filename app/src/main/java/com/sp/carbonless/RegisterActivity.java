@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
-    public EditText usernameId, emailId, password, CfmPassword;
+    public EditText usernameId, emailId, password, CfmPassword, fullnameId, addressId;
     public Button buttonSignUp;
     public TextView tvSignIn;
     private ProgressDialog loadingBar;
@@ -38,8 +37,10 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         mFirebaseAuth = FirebaseAuth.getInstance();
+        fullnameId = findViewById(R.id.editTextFullNameLogin);
+        addressId = findViewById(R.id.editTextAddress);
         usernameId = findViewById(R.id.editTextUsername);
-        emailId = findViewById(R.id.editTextEmail);
+        emailId = findViewById(R.id.editTextUsernameLogin);
         password = findViewById(R.id.editTextPassword);
         CfmPassword = findViewById(R.id.editTextCfmPassword);
         tvSignIn = findViewById(R.id.noacc);
@@ -69,21 +70,31 @@ public class RegisterActivity extends AppCompatActivity {
     private void SignUp()
     {
         String username = usernameId.getText().toString();
+        String fullname = fullnameId.getText().toString();
+        String address = addressId.getText().toString();
         String email = emailId.getText().toString();
         String password1 = password.getText().toString();
         String passwordCfm = CfmPassword.getText().toString();
 
         if (TextUtils.isEmpty(username))
         {
-            Toast.makeText(this, "Please write your name...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write your username", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(email))
         {
-            Toast.makeText(this, "Please write your phone number...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write your email", Toast.LENGTH_SHORT).show();
+        }
+        else if (TextUtils.isEmpty(fullname))
+        {
+            Toast.makeText(this, "Please write your full name", Toast.LENGTH_SHORT).show();
+        }
+        else if (TextUtils.isEmpty(address))
+        {
+            Toast.makeText(this, "Please write your address", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(password1))
         {
-            Toast.makeText(this, "Please write your password...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write your password", Toast.LENGTH_SHORT).show();
         }else if (!password1.equals(passwordCfm))
         {
             password.setError("Password is not the same!");
@@ -93,15 +104,15 @@ public class RegisterActivity extends AppCompatActivity {
         else
         {
             loadingBar.setTitle("Create Account");
-            loadingBar.setMessage("Please wait, while we are checking the credentials.");
+            loadingBar.setMessage("Please wait checking the credentials.");
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
 
-            ValidatephoneNumber(username, email, password1);
+            ValidatephoneNumber(username, email, password1, fullname, address);
         }
     }
 
-    private void ValidatephoneNumber(final String username, final String email, final String password)
+    private void ValidatephoneNumber(final String username, final String email, final String password, final String fullname, final String address)
     {
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app").getReference();
@@ -116,6 +127,9 @@ public class RegisterActivity extends AppCompatActivity {
                     userdataMap.put("username", username);
                     userdataMap.put("password", password);
                     userdataMap.put("email", email);
+                    userdataMap.put("fullname", fullname);
+                    userdataMap.put("address", address);
+
 
                     RootRef.child("Users").child(username).updateChildren(userdataMap)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {

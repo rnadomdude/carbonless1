@@ -9,10 +9,11 @@
     tools:openDrawer="start">
 
     <include
-        android:id="@+id/app_bar_home2"
         layout="@layout/app_bar_home2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@drawable/login_bk"
+        />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -21,5 +22,9 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_home2"
-        app:menu="@menu/activity_home2_drawer" />
+        app:menu="@menu/activity_home2_drawer" >
+
+    </com.google.android.material.navigation.NavigationView>
+
+
 </androidx.drawerlayout.widget.DrawerLayout>

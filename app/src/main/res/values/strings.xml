@@ -7,7 +7,6 @@
     <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
     <string name="login_name_hint">Name</string>
     <string name="login_mobile_number_hint">Mobile Number</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_home">activity_home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -46,4 +45,31 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!--spinner sell category -->
+    <string-array name="sell_category">
+        <item>Smart phones</item>
+        <item>Computers &amp; Laptops</item>
+        <item>Computer Peripherals</item>
+        <item>Printers</item>
+        <item>Monitors &amp; Tv</item>
+        <item>Consoles</item>
+        <item>Wearables &amp; Smart watches</item>
+        <item>Smart phone accessories</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="search_category">
+        <item>No sorting selected</item>
+        <item>Smart phones</item>
+        <item>Computers &amp; Laptops</item>
+        <item>Computer Peripherals</item>
+        <item>Printers</item>
+        <item>Monitors &amp; Tv</item>
+        <item>Consoles</item>
+        <item>Wearables &amp; Smart watches</item>
+        <item>Smart phone accessories</item>
+        <item>Others</item>
+    </string-array>
+
 </resources>

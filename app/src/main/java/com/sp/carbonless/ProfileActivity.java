@@ -24,6 +24,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.sp.carbonless.Model.Products;
 import com.sp.carbonless.Prevalent.Prevalent;
 import com.sp.carbonless.ViewHolder.ProductViewHolder;
@@ -32,31 +33,37 @@ import com.squareup.picasso.Picasso;
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 
-public class HomeActivity2 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+public class ProfileActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 
 {
-    private DatabaseReference ProductsRef;
+    private DatabaseReference ProductsRef, ProductsRefUser;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+    private TextView profileUsername;
+    private CircleImageView profileUserImage;
+    private String onlineguy = Prevalent.currentOnlineUser.getUserName();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home2);
+        setContentView(R.layout.activity_profile);
         RecyclerView.LayoutManager layoutManager;
 
 
         ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
+        ProductsRefUser = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("UserListings").child(onlineguy);
+
 
         Paper.init(this);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Home");
+        toolbar.setTitle("Profile");
         setSupportActionBar(toolbar);
 
-
+        profileUsername = (TextView) findViewById(R.id.profile_username);
+        profileUserImage = (CircleImageView) findViewById(R.id.profile_userimage);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -71,6 +78,9 @@ public class HomeActivity2 extends AppCompatActivity implements NavigationView.O
         View headerView = navigationView.getHeaderView(0);
         TextView userNameTextView = headerView.findViewById(R.id.user_profile_name);
         CircleImageView profileImageView = headerView.findViewById(R.id.user_profile_image);
+
+        profileUsername.setText(Prevalent.currentOnlineUser.getUserName());
+        Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.ic_baseline_person_24).into(profileUserImage);
 
         userNameTextView.setText(Prevalent.currentOnlineUser.getUserName());
         Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.ic_baseline_person_24).into(profileImageView);
@@ -90,7 +100,7 @@ public class HomeActivity2 extends AppCompatActivity implements NavigationView.O
         super.onStart();
 
         FirebaseRecyclerOptions<Products> options =
-                new FirebaseRecyclerOptions.Builder<Products>().setQuery(ProductsRef, Products.class).build();
+                new FirebaseRecyclerOptions.Builder<Products>().setQuery(ProductsRefUser, Products.class).build();
 
 
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
@@ -108,11 +118,8 @@ public class HomeActivity2 extends AppCompatActivity implements NavigationView.O
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(HomeActivity2.this, MarketListingDetailsActivity.class);
+                                Intent intent = new Intent(ProfileActivity.this, MarketListingDetailsActivity.class);
                                 intent.putExtra("pid", model.getPid());
-                                intent.putExtra("username", model.getUsername());
-                                intent.putExtra("email", model.getEmail());
-                                intent.putExtra("pname", model.getPname());
                                 startActivity(intent);
                             }
                         });
@@ -171,41 +178,39 @@ public class HomeActivity2 extends AppCompatActivity implements NavigationView.O
 
         if (id == R.id.nav_home)
         {
-
-
-        }
-        else if (id == R.id.nav_search) {
-            Intent intent = new Intent(HomeActivity2.this, SearchActivity.class);
+            Intent intent = new Intent(ProfileActivity.this, HomeActivity2.class);
             startActivity(intent);
 
+        }else if (id == R.id.nav_search)
+        {
+            Intent intent = new Intent(ProfileActivity.this, SearchActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_sell)
         {
-            Intent intent = new Intent(HomeActivity2.this, SellActivity.class);
+            Intent intent = new Intent(ProfileActivity.this, SellActivity.class);
             startActivity(intent);
         }
         else if (id == R.id.nav_profile)
         {
-            Intent intent = new Intent(HomeActivity2.this, ProfileActivity.class);
-            startActivity(intent);
+
         }
         else if (id == R.id.nav_settings)
         {
-            Intent intent = new Intent(HomeActivity2.this, SettingsActivity.class);
+            Intent intent = new Intent(ProfileActivity.this, SettingsActivity.class);
             startActivity(intent);
         }
         else if (id == R.id.nav_logout)
         {
             Paper.book().destroy();
 
-            Intent intent = new Intent(HomeActivity2.this, MainActivity.class);
+            Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
-        }
-        else if (id == R.id.nav_about)
+        } else if (id == R.id.nav_about)
         {
-            Intent intent = new Intent(HomeActivity2.this, AboutActivity.class);
+            Intent intent = new Intent(ProfileActivity.this, AboutActivity.class);
             startActivity(intent);
         }
 
@@ -215,5 +220,6 @@ public class HomeActivity2 extends AppCompatActivity implements NavigationView.O
     }
 
 }
+
 
 

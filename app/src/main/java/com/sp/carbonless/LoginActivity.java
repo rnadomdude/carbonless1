@@ -14,11 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,9 +25,9 @@ import com.sp.carbonless.Prevalent.Prevalent;
 import io.paperdb.Paper;
 
 public class LoginActivity extends AppCompatActivity {
-    public EditText emailId, password;
+    public EditText usernameId, password;
     public Button buttonLogIn;
-    public TextView tvSignUp;
+    public TextView tvSignUp, tvForgotPass;
     private ProgressDialog loadingBar;
     private String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
@@ -44,15 +40,17 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
-        emailId = findViewById(R.id.editTextEmail);
+        usernameId = findViewById(R.id.editTextUsernameLogin);
         password = findViewById(R.id.editTextPassword);
         tvSignUp = findViewById(R.id.makeacc);
+        tvForgotPass = findViewById(R.id.forget_password_link);
         buttonLogIn = findViewById(R.id.cirLoginButton);
         loadingBar = new ProgressDialog(this);
 
         Paper.init(this);
         chkBoxRememberMe = (CheckBox) findViewById(R.id.remember_me_chkb);
         parentDbName = "Users";
+
 
         buttonLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +59,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        tvForgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intSignUp = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intSignUp);
+            }
+        });
 
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,12 +80,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private void LoginUser()
     {
-        String email = emailId.getText().toString();
+        String username = usernameId.getText().toString();
         String password1 = password.getText().toString();
 
-        if (TextUtils.isEmpty(email))
+        if (TextUtils.isEmpty(username))
         {
-            Toast.makeText(this, "Please write your phone number...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write your username...", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(password1))
         {
@@ -94,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
             loadingBar.show();
 
 
-            AllowAccessToAccount(email, password1);
+            AllowAccessToAccount(username, password1);
         }
     }
 
