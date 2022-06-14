@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "1011201732363",
-    "firebase_url": "https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "carbonless-d32c3",
-    "storage_bucket": "carbonless-d32c3.appspot.com"
+    "project_number": "921372377922",
+    "firebase_url": "https://nsmen-514df-default-rtdb.firebaseio.com",
+    "project_id": "nsmen-514df",
+    "storage_bucket": "nsmen-514df.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1011201732363:android:9fdfce30215734f92bbc0e",
+        "mobilesdk_app_id": "1:921372377922:android:fde66318d03cab6bb5fedb",
         "android_client_info": {
           "package_name": "com.sp.carbonless"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1011201732363-qjf4q1j5j3rk4levvi7fhhkmj6m3ve6l.apps.googleusercontent.com",
+          "client_id": "921372377922-62oso4joik6bel8lr3thkbhqu2pcs398.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDa6vvvYeUCBkD0uep71ByGou2nOwYQT54"
+          "current_key": "AIzaSyAxWw2PbogixUMu54qB_0uDucy8TWuKluw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1011201732363-qjf4q1j5j3rk4levvi7fhhkmj6m3ve6l.apps.googleusercontent.com",
+              "client_id": "921372377922-62oso4joik6bel8lr3thkbhqu2pcs398.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

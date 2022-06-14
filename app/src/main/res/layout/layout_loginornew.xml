@@ -21,7 +21,7 @@
             android:layout_gravity="center|center_horizontal|center_vertical"
             android:fontFamily="serif-monospace"
             android:gravity="center"
-            android:text="Carbonless"
+            android:text="NSLobang"
             android:textStyle="bold"
             android:textSize="48sp" />
 
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
             android:gravity="center"
-            android:text="Electronics \nselling platform"
+            android:text="Used NS goods"
             android:textSize="24sp" />
 
         <Button

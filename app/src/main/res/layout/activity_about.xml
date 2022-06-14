@@ -74,11 +74,10 @@
                 android:id="@+id/profile_userimage"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
-                android:src="@drawable/carbonless"
+                android:src="@drawable/unknow1232131n"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                app:civ_border_width="1dp"
-                app:civ_border_color="@android:color/black"/>
+                />
 
             <TextView
                 android:id="@+id/textView"
@@ -89,7 +88,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:fontFamily="serif-monospace"
-                android:text="Carbonless by: Goh Wei Jie" />
+                android:text="NSLobang by: Goh Wei Jie" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -118,7 +117,7 @@
                 android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:text="gohwj.20@ichat.sp.edu.sg" />
+                android:text="lol no" />
 
             <Button
                 android:id="@+id/button_email"

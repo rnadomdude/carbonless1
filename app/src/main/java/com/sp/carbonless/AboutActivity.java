@@ -43,8 +43,8 @@ public class AboutActivity extends AppCompatActivity {
 
     private void sendMail() {
         String email, subject, message;
-        email = "gohwj.20@ichat.sp.edu.sg";
-        subject = "Question about Carbonless";
+        email = "";
+        subject = "Question about NSLobang";
         message = "Choose an email client";
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);

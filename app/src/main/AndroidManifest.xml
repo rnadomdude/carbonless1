@@ -11,9 +11,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/carbonless332"
-        android:label="@string/app_name"
-        android:roundIcon="@drawable/carbonless332"
+        android:icon="@drawable/unknow1232131n"
+        android:label="NSLobang"
+        android:roundIcon="@drawable/unknow1232131n"
         android:supportsRtl="true"
         android:theme="@style/Theme.Carbonless" >
         <activity

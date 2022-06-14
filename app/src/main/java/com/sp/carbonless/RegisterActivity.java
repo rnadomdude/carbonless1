@@ -30,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
     public TextView tvSignIn;
     private ProgressDialog loadingBar;
     FirebaseAuth mFirebaseAuth;
-    FirebaseDatabase database = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app");
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,7 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void ValidatephoneNumber(final String username, final String email, final String password, final String fullname, final String address)
     {
         final DatabaseReference RootRef;
-        RootRef = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app").getReference();
+        RootRef = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference();
 
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

@@ -54,7 +54,7 @@ public class SettingsActivity extends AppCompatActivity
         setContentView(R.layout.activity_settings);
 
 
-        storageProfilePictureRef = FirebaseStorage.getInstance("gs://carbonless-d32c3.appspot.com").getReference().child("Profile pictures");
+        storageProfilePictureRef = FirebaseStorage.getInstance("gs://nsmen-514df.appspot.com").getReference().child("Profile pictures");
 
         profileImageView = (CircleImageView) findViewById(R.id.settings_profile_image);
         emailEditText = (EditText) findViewById(R.id.settings_email);
@@ -114,7 +114,7 @@ public class SettingsActivity extends AppCompatActivity
 
     private void updateOnlyUserInfo()
     {
-        DatabaseReference ref = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("Users");
+        DatabaseReference ref = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("Users");
 
         HashMap<String, Object> userMap = new HashMap<>();
         userMap. put("email", emailEditText.getText().toString());
@@ -212,7 +212,7 @@ public class SettingsActivity extends AppCompatActivity
                                 Uri downloadUrl = task.getResult();
                                 myUrl = downloadUrl.toString();
 
-                                DatabaseReference ref = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("Users");
+                                DatabaseReference ref = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("Users");
 
                                 HashMap<String, Object> userMap = new HashMap<>();
                                 userMap. put("email", emailEditText.getText().toString());
@@ -244,7 +244,7 @@ public class SettingsActivity extends AppCompatActivity
 
     private void userInfoDisplay(final CircleImageView profileImageView, final EditText emailEditText, final EditText userNameEditText, final EditText addressEditText)
     {
-        DatabaseReference UsersRef = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("Users").child(Prevalent.currentOnlineUser.getUserName());
+        DatabaseReference UsersRef = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("Users").child(Prevalent.currentOnlineUser.getUserName());
 
         UsersRef.addValueEventListener(new ValueEventListener() {
             @Override

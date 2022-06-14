@@ -114,7 +114,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     private void searchSpinnerGo() {
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Products");
+        DatabaseReference reference = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("Products");
 
         FirebaseRecyclerOptions<Products> options =
                 new FirebaseRecyclerOptions.Builder<Products>().setQuery(reference.orderByChild("category").startAt(searchCategory), Products.class).build();
@@ -167,7 +167,7 @@ public class SearchActivity extends AppCompatActivity implements AdapterView.OnI
     protected void onStart() {
         super.onStart();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Products");
+        DatabaseReference reference = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("Products");
 
         FirebaseRecyclerOptions<Products> options =
                 new FirebaseRecyclerOptions.Builder<Products>().setQuery(reference.orderByChild("pname").startAt(searchInputTxt), Products.class).build();

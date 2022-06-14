@@ -61,9 +61,9 @@ public class SellActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
         //CategoryName = getIntent().getExtras().get("category").toString();
-        ProductImagesRef = FirebaseStorage.getInstance("gs://carbonless-d32c3.appspot.com").getReference().child("Product Images");
-        ProductsRef = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("Products");
-        ProductsRefUser = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("UserListings").child(username);
+        ProductImagesRef = FirebaseStorage.getInstance("gs://nsmen-514df.appspot.com").getReference().child("Product Images");
+        ProductsRef = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("Products");
+        ProductsRefUser = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("UserListings").child(username);
 
 
         AddNewProductButton = (Button) findViewById(R.id.add_new_product);

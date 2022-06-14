@@ -115,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         final DatabaseReference RootRef;
-        RootRef = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app").getReference();
+        RootRef = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference();
 
 
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {

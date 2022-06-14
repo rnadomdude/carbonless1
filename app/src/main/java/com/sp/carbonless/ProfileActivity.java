@@ -52,7 +52,7 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
 
 
         ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
-        ProductsRefUser = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("UserListings").child(onlineguy);
+        ProductsRefUser = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("UserListings").child(onlineguy);
 
 
         Paper.init(this);

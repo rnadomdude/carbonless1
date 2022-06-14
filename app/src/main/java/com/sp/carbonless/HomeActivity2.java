@@ -47,7 +47,7 @@ public class HomeActivity2 extends AppCompatActivity implements NavigationView.O
         RecyclerView.LayoutManager layoutManager;
 
 
-        ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
+        ProductsRef = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("Products");
 
         Paper.init(this);
 

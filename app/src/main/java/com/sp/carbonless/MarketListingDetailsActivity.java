@@ -121,8 +121,8 @@ public class MarketListingDetailsActivity extends AppCompatActivity {
 
     private void deleteListing(String listingId1) {
 
-        DatabaseReference listingsRef = FirebaseDatabase.getInstance().getReference().child("UserListings").child(Prevalent.currentOnlineUser.getUserName());
-        DatabaseReference listingsRef1 = FirebaseDatabase.getInstance().getReference().child("Products").child(listingId1);
+        DatabaseReference listingsRef = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("UserListings").child(Prevalent.currentOnlineUser.getUserName());
+        DatabaseReference listingsRef1 = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("Products").child(listingId1);
 
         listingsRef1.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -150,7 +150,7 @@ public class MarketListingDetailsActivity extends AppCompatActivity {
     }
 
     private void getListingId(String listingId) {
-        DatabaseReference listingsRef = FirebaseDatabase.getInstance().getReference().child("Products");
+        DatabaseReference listingsRef = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference().child("Products");
 
         listingsRef.child(listingId).addValueEventListener(new ValueEventListener() {
             @Override

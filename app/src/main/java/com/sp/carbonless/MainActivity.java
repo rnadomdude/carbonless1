@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         private void AllowAccess ( final String username, final String password)
         {
             final DatabaseReference RootRef;
-            RootRef = FirebaseDatabase.getInstance("https://carbonless-d32c3-default-rtdb.asia-southeast1.firebasedatabase.app").getReference();
+            RootRef = FirebaseDatabase.getInstance("https://nsmen-514df-default-rtdb.firebaseio.com/").getReference();
 
 
             RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     } else {
-                        Toast.makeText(MainActivity.this, "Account with this " + username + " number do not exists.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Account with this " + username + " number does not exists.", Toast.LENGTH_SHORT).show();
                         loadingBar.dismiss();
                     }
                 }
